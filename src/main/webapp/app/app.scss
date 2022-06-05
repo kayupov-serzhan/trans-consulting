@@ -5,7 +5,15 @@
 @import '~bootswatch/dist/materia/bootswatch';
 body {
   margin: 0;
+  background: #e5e5e5;
 }
+
+// .view-container {
+//   background-repeat: no-repeat;
+//   background-size: auto !important;
+//   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../content/images/highway-surrounded-by-hills-cloudy-sky.png);
+//   background-position: 50% 50%;
+// }
 
 a {
   color: #533f03;
@@ -35,9 +43,6 @@ a {
     }
     .view-routes {
       height: 100%;
-      > div {
-        height: 100%;
-      }
     }
   }
 }

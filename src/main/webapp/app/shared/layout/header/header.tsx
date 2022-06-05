@@ -18,23 +18,30 @@ export interface IHeaderProps {
 
 const Header = (props: IHeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const renderDevRibbon = () =>
-    props.isInProduction === false ? (
-      <div className="ribbon dev">
-        <a href="">Development</a>
-      </div>
-    ) : null;
-
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   /* jhipster-needle-add-element-to-menu - JHipster will add new menu items here */
 
   return (
     <div id="app-header">
-      {renderDevRibbon()}
-      <LoadingBar className="loading-bar" />
-      <Navbar data-cy="navbar" dark expand="md" fixed="top" className="bg-primary">
+      {/* <LoadingBar className="loading-bar" /> */}
+      <header>
+        <div className="container header-row">
+          <div className="row header-row">
+            <div className="col-sm-6">
+              <a href="/">
+                <img src="logo.svg" width="60" height="60px" />
+              </a>
+            </div>
+            <div className="col-sm-6 info-right ">
+              <div>+7 777 808 88 22</div>
+              <button className="order-call-button">Заказать звонок</button>
+              <div>Войти | Зарегистрироваться</div>
+            </div>
+          </div>
+        </div>
+      </header>
+      {/* <Navbar data-cy="navbar" dark expand="md" fixed="top" className="bg-primary">
         <NavbarToggler aria-label="Menu" onClick={toggleMenu} />
         <Brand />
         <Collapse isOpen={menuOpen} navbar>
@@ -45,7 +52,7 @@ const Header = (props: IHeaderProps) => {
             <AccountMenu isAuthenticated={props.isAuthenticated} />
           </Nav>
         </Collapse>
-      </Navbar>
+      </Navbar> */}
     </div>
   );
 };

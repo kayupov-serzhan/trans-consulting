@@ -14,6 +14,14 @@ import PrivateRoute from 'app/shared/auth/private-route';
 import ErrorBoundaryRoute from 'app/shared/error/error-boundary-route';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
+import CoverCar from './modules/cover-car/CoverCar';
+import WeighingСar from './modules/weighing-car/WeighingСar';
+import RouteSurvey from './modules/route-survey/RouteSurvey';
+import FullSupport from './modules/full-support/FullSupport';
+import PreventionAnalysis from './modules/prevention-analysis/PreventionAnalysis';
+import ProtectionInterests from './modules/protection-interests/ProtectionInterests';
+import Tahograf from './modules/tahograf/Tahograf';
+import Escort from './modules/escort/Escort';
 
 const loading = <div>loading ...</div>;
 
@@ -31,8 +39,16 @@ const Routes = () => {
   return (
     <div className="view-routes">
       <Switch>
-        <ErrorBoundaryRoute path="/login" component={Login} />
-        <ErrorBoundaryRoute path="/logout" component={Logout} />
+        {/* <ErrorBoundaryRoute path="/login" component={Login} />
+        <ErrorBoundaryRoute path="/logout" component={Logout} /> */}
+        <ErrorBoundaryRoute path="/escort" component={Escort} />
+        <ErrorBoundaryRoute path="/tahograf" component={Tahograf} />
+        <ErrorBoundaryRoute path="/protection-interests" component={ProtectionInterests} />
+        <ErrorBoundaryRoute path="/prevention-analysis" component={PreventionAnalysis} />
+        <ErrorBoundaryRoute path="/full-support" component={FullSupport} />
+        <ErrorBoundaryRoute path="/route-survey" component={RouteSurvey} />
+        <ErrorBoundaryRoute path="/weighing-car" component={WeighingСar} />
+        <ErrorBoundaryRoute path="/cover-car" component={CoverCar} />
         <ErrorBoundaryRoute path="/account/register" component={Register} />
         <ErrorBoundaryRoute path="/account/activate/:key?" component={Activate} />
         <ErrorBoundaryRoute path="/account/reset/request" component={PasswordResetInit} />
