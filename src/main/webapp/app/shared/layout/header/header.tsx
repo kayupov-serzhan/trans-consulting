@@ -26,7 +26,7 @@ const Header = (props: IHeaderProps) => {
   /* jhipster-needle-add-element-to-menu - JHipster will add new menu items here */
 
   return (
-    <div id="app-header">
+    <div id="app-header asd">
       {/* <LoadingBar className="loading-bar" /> */}
       <header>
         <div className="container header-row">
