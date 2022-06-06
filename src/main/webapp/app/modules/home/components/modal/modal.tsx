@@ -20,18 +20,23 @@ const style = {
 };
 
 const ModalPermitDocs = props => {
-  const { open, handleClose, title, description, image } = props;
+  const { open, handleClose, title, description, image, list } = props;
   return (
     <div>
       <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
         <Box sx={style}>
           <div className="container">
             <div className="row">
-              <img className="permit-docs-modal-image" src={image} />
+              <div className="col-sm">
+                <img className="permit-docs-modal-image" src={image} />
+              </div>
             </div>
-            <div className="row">
-              <p className="permit-docs-modal-main-title">{title}</p>
-              <p>{description}</p>
+            <div className="row row-title">
+              <div className="col-sm">
+                <p className="permit-docs-modal-main-title">{title}</p>
+                <p>{description}</p>
+                {list}
+              </div>
             </div>
             <div className="row justify-content-end">
               <div className="col-sm-9">

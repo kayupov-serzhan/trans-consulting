@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import { Button } from '@mui/material';
 import ModalPermitDocs from './components/modal/modal';
+import { jsx } from '@emotion/react';
+// import Button from 'app/components/button/button';
 
 export const Home = () => {
   // const account = useAppSelector(state => state.authentication.account);
@@ -10,6 +12,7 @@ export const Home = () => {
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState('');
   const [description, setDescription] = React.useState('');
+  const [list, setList] = React.useState('' as any);
   const [image, setImage] = React.useState('');
 
   const handleOpen = () => setOpen(true);
@@ -17,7 +20,7 @@ export const Home = () => {
 
   return (
     <>
-      <ModalPermitDocs open={open} handleClose={handleClose} title={title} description={description} image={image} />
+      <ModalPermitDocs open={open} handleClose={handleClose} title={title} description={description} image={image} list={list} />
       <section className="main-section-home">
         <div className="container">
           <div className="row">
@@ -81,15 +84,175 @@ export const Home = () => {
             </div>
           </div>
           <div className="row justify-content-between consult-box">
-            <div className="col-sm-3 pred-reisovaya-proverka"></div>
-            <div className="col-sm-3 pred-reisovaya-proverka"></div>
-            <div className="col-sm-3 pred-reisovaya-proverka"></div>
-            <div className="col-sm-3 pred-reisovaya-proverka"></div>
+            <div className="row col-sm-3 pred-reisovaya-proverka">
+              <div className="row align-items-end cover-car-main-title">Предрейсовая проверка</div>
+              <div className="row align-items-end detailed-consult-link">
+                <div className="col-sm-6">
+                  <Button
+                    className="detailed-consult-button"
+                    onClick={() => {
+                      handleOpen();
+                      setTitle('Предрейсовая проверка');
+                      setDescription(
+                        'Данная услуга подразумевает проверку на соответствие требований законодательства в области автомобильного транспорта и документов на перевозимый груз, а также корректность их заполнения перед осуществлением перевозки. Исходя из типа груза и его параметров определяются перечень необходимых документов. За отсутствие установленных документов предусмотрен административный штраф и уплата дорожного сбора. Специалисты нашей компании проверят наличие необходимых документов и помогут произвести предрейсовую проверку, тем самым исключив непредусмотренные расходы и риски совершения нарушений.'
+                      );
+                      setList('');
+                      setImage('../../../../../content/images/Frame6.png');
+                    }}
+                    variant="text"
+                  >
+                    Подробнее
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className="row col-sm-3 pred-reisovaya-proverka">
+              <div className="row align-items-end cover-car-main-title">Консультация по НПА</div>
+              <div className="row align-items-end detailed-consult-link">
+                <div className="col-sm-6">
+                  <Button
+                    className="detailed-consult-button"
+                    onClick={() => {
+                      handleOpen();
+                      setTitle('Консультация по Законам об автомобильном транспорте');
+                      setDescription(
+                        'Для перевозчиков и грузоотправителей действующими нормативно-правовыми актами в сфере автомобильного транспорта предусмотрены требования и обязательства, которые из-за юридических терминологий трудно воспринимаются и в результате не исполняются. Это приводит к нарушениям и большим затратам. Мы поможем Вам растолковать требования законов и избежать их нарушения, тем самым повысить юридическую грамотность и сохранить капитал.'
+                      );
+                      setList('');
+                      setImage('../../../../../content/images/Frame7.png');
+                    }}
+                    variant="text"
+                  >
+                    Подробнее
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className="row col-sm-3 pred-reisovaya-proverka">
+              <div className="row align-items-end cover-car-main-title">Консультация по ОГ</div>
+              <div className="row align-items-end detailed-consult-link">
+                <div className="col-sm-6">
+                  <Button
+                    className="detailed-consult-button"
+                    onClick={() => {
+                      handleOpen();
+                      setTitle('Консультация по перевозке ОГ');
+                      setDescription(
+                        'Каждое предприятие, деятельность которого включает автомобильную перевозку опасных грузов или связанные с ней операции по упаковке, погрузке, наполнению или разгрузке, обязан иметь одного или нескольких консультантов по вопросам безопасности перевозки опасных грузов. Наша компания может предоставить консультанта и профессионально выполнять возникающие вопросы по перевозке ОГ.'
+                      );
+                      setList('');
+                      setImage('../../../../../content/images/Frame8.png');
+                    }}
+                    variant="text"
+                  >
+                    Подробнее
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className="row col-sm-3 pred-reisovaya-proverka">
+              <div className="row align-items-end cover-car-main-title">Расчет суммы сбора</div>
+              <div className="row align-items-end detailed-consult-link">
+                <div className="col-sm-6">
+                  <Button
+                    className="detailed-consult-button"
+                    onClick={() => {
+                      handleOpen();
+                      setTitle('Расчет суммы сбора');
+                      setDescription(
+                        'Формирование стоимости перевозки негабаритных и тяжеловесных грузов напрямую зависит от суммы сбора за проезд (дорожный сбор). Перевозчики не могут получить стоимость суммы сбора до подачи заявки на получение спец разрешения и получения ответа от гос. органов, что занимает определенный период времени. Наш специалист рассчитает стоимости спецразрешения за 5 минут.'
+                      );
+                      setList('');
+                      setImage('../../../../../content/images/Frame9.png');
+                    }}
+                    variant="text"
+                  >
+                    Подробнее
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="row justify-content-around consult-box">
-            <div className="col-sm-3 pred-reisovaya-proverka"></div>
-            <div className="col-sm-3 pred-reisovaya-proverka"></div>
-            <div className="col-sm-3 pred-reisovaya-proverka"></div>
+            <div className="row col-sm-3 pred-reisovaya-proverka">
+              <div className="row align-items-end cover-car-main-title">Подбор автомобиля и правильное размещение груза</div>
+              <div className="row align-items-end detailed-consult-link">
+                <div className="col-sm-6">
+                  <Button
+                    className="detailed-consult-button"
+                    onClick={() => {
+                      handleOpen();
+                      setTitle('Подбор транспорта и правильное размещение груза');
+                      setDescription(
+                        'Перевозки крупногабаритных и тяжеловесных грузов по своей технической характеристике часто являются сложными и дорогостоящими и несет опасность при погрузке и транспортировке. Для правильной организации перевозки данных грузов важно произвести корректный подбор транспорта и правильное размещения груза на транспорте. Данная работа поможет исключить опасность при перевозке и повлияет на снижение суммы сбора. Наши специалисты сделают проект подбора транспорта и размещения груза и предоставят в виде чертежа-документа.'
+                      );
+                      setList('');
+                      setImage('../../../../../content/images/Frame10.png');
+                    }}
+                    variant="text"
+                  >
+                    Подробнее
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className="row col-sm-3 pred-reisovaya-proverka">
+              <div className="row align-items-end cover-car-main-title">Консультация по тахографу</div>
+              <div className="row align-items-end detailed-consult-link">
+                <div className="col-sm-6">
+                  <Button
+                    className="detailed-consult-button"
+                    onClick={() => {
+                      const listVar = (
+                        <ol>
+                          <li>Выпуск карточки тахографа водителей и предприятии;</li>
+                          <li>Подготовка и обучение водителей по соблюдение режима труда и отдыха;</li>
+                          <li>Расшифровка активностей и рабочих смен;</li>
+                          <li>Поиск нарушений по соблюдению режима труда и отдыха.</li>
+                        </ol>
+                      );
+                      handleOpen();
+                      setTitle('Консультация по тахографу');
+                      setDescription(
+                        'Автотранспортные средства, задействованные в перевозках пассажиров и багажа, опасных грузов, а также в международных перевозках грузов должны быть оборудованы «тахографами», а водители данных автотранспортных средств обязаны соблюдать режим труда и отдыха согласно ЕСТР. За нарушение норм ЕСТР и национальных правил предусмотрено административная ответственность водителей и перевозчиков. Наши специалисты осуществляют консультацию в сфере соблюдения режима труда и отдыха водителей, а также производит считывание, расшифровку и анализ данных с карт водителей и тахографов. '
+                      );
+                      setList(listVar);
+                      setImage('../../../../../content/images/Frame11.png');
+                    }}
+                    variant="text"
+                  >
+                    Подробнее
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className="row col-sm-3 pred-reisovaya-proverka">
+              <div className="row align-items-end cover-car-main-title">Оформление перевозочных документов</div>
+              <div className="row align-items-end detailed-consult-link">
+                <div className="col-sm-6">
+                  <Button
+                    className="detailed-consult-button"
+                    onClick={() => {
+                      const listVar = (
+                        <ol>
+                          <li>Пакет - </li>
+                        </ol>
+                      );
+                      handleOpen();
+                      setTitle('Оформление перевозочных документов');
+                      setDescription(
+                        'Каждая перевозка оформляется перевозочными документами (ТТН, CMR, путевой лист) и договором автомобильной перевозки между грузоотправителем и перевозчиком. Перевозка без оформления данных документов приводит к административному штрафом и риску не выполнения обязательств сторонами. Наши специалисты подготовят пакет перевозочных документов для каждого вида перевозки в кротчайшие сроки.Для удобства и экономии предлагаем подготовку документов в виде пакетов:'
+                      );
+                      setList(listVar);
+                      setImage('../../../../../content/images/Frame12.png');
+                    }}
+                    variant="text"
+                  >
+                    Подробнее
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

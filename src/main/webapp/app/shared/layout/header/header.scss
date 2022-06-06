@@ -10,7 +10,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 99;
+  z-index: 1;
   transition: 0.2s linear;
   border-bottom: 1px solid rgba(255, 255, 255, 0.28);
 }
@@ -113,4 +113,20 @@ Navbar styles
   border-radius: 19px;
   border: none;
   color: #ffffff;
+}
+a.logo svg {
+  height: 50px;
+  width: 100%;
+}
+
+a.logo svg path {
+  fill: #fff;
+}
+
+header.fixed a.logo svg .cls-1 {
+  fill: #0b1e3f;
+}
+
+header.fixed a.logo svg .cls-2 {
+  fill: #04488a;
 }
