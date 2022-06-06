@@ -10,7 +10,7 @@
     "ci:frontend:test": "npm run webapp:build:$npm_package_config_default_environment && npm run test-ci",
     "clean-www": "rimraf target/classes/static/app/{src,target/}",
     "cleanup": "rimraf target/classes/static/",
-    "heroku-prebuild": "npm install --dev",
+    "heroku-postbuild": "npm run build",
     "jest": "jest --coverage --logHeapUsage --maxWorkers=2 --config jest.conf.js",
     "jest:update": "npm run jest -- --updateSnapshot",
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
