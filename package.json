@@ -11,8 +11,6 @@
     "clean-www": "rimraf target/classes/static/app/{src,target/}",
     "cleanup": "rimraf target/classes/static/",
     "heroku-postbuild": "npm run build",
-    "jest": "jest --coverage --logHeapUsage --maxWorkers=2 --config jest.conf.js",
-    "jest:update": "npm run jest -- --updateSnapshot",
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install",
@@ -22,9 +20,6 @@
     "start": "npm run webapp:dev --",
     "start-tls": "npm run webapp:dev -- --env.tls",
     "pretest": "npm run lint",
-    "test": "npm run jest --",
-    "test-ci": "npm run lint && npm run jest:update --",
-    "test:watch": "npm run jest -- --watch",
     "watch": "concurrently 'npm run start' npm:backend:start",
     "webapp:build": "npm run clean-www && npm run webapp:build:dev --",
     "webapp:build:dev": "webpack --config webpack/webpack.dev.js --env stats=minimal",
@@ -32,7 +27,6 @@
     "webapp:dev": "npm run webpack-dev-server -- --config webpack/webpack.dev.js --env stats=minimal",
     "webapp:dev-verbose": "npm run webpack-dev-server -- --config webpack/webpack.dev.js --progress=profile --env stats=normal",
     "webapp:prod": "npm run clean-www && npm run webapp:build:prod --",
-    "webapp:test": "npm run test --",
     "webpack-dev-server": "webpack serve"
   },
   "config": {
